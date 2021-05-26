@@ -10,7 +10,7 @@ h1 {
   text-align: center;
   color: black;
   font-family: "Bungee";
-  font-size: 40pt;
+  font-size: 30pt;
   margin: 3% auto 1%;
 }
 h4 {
@@ -24,7 +24,7 @@ h4 {
 h2 {
   color: black;
   font-family: "Bungee";
-  font-size: 25pt;
+  font-size: 20pt;
   line-height: 65pt;
 }
 p {
@@ -48,11 +48,18 @@ a {
 .weather-app-wrapper {
   max-width: 1700px;
   margin: 30px;
-  padding: 100px 50px;
+  padding: 100px 50px 0 50px;
   border: 1px solid #dadde1;
   border-radius: 30px;
   background-color: white;
   box-shadow: 3px 3px 10px rgb(0 0 0 / 30%);
+}
+.bigicon {
+  font-size: 25pt;
+}
+.smallicon {
+  font-size: 15pt;
+  text-align: left;
 }
 .days {
   font-size: 13pt;
@@ -64,7 +71,7 @@ a {
 #temp {
   font-size: 13pt;
   font-family: "Bungee";
-  color: #6c63ff;
+  color: #583ea1;
 }
 #windspeed #precip {
   color: #fe59a9;
@@ -75,6 +82,29 @@ a {
   font-family: Geneva, sans-serif;
   font-weight: bold;
 }
-.details {
+.footer {
   font-size: smaller;
+  padding: 6% 0;
+  text-align: center;
+}
+.search-input {
+  background-color: #7b6f9b2d;
+  margin: 15px 10px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+}
+#button-addon2 {
+  background-color: #583ea1;
+  margin: 15px 10px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  min-width: 100px;
+  color: white;
+}
+#searchWeather {
+  padding: 0;
+  margin-bottom: 5%;
+  line-height: 30px;
 }

@@ -9,7 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
       rel="stylesheet"
     />
-    
+    <script
+      src="https://kit.fontawesome.com/f22b4216ff.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -39,7 +42,7 @@
                             <form id="searchForm">
                             </br>
                             <div class="input-group mb-3">
-                                <input id="searchInput" type="text" class="form-control" placeholder="Hey there! Write a city" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <input id="searchInput" type="text" class="form-control search-input" placeholder="Hey there! Write a city" aria-label="Recipient's username" aria-describedby="button-addon2">
                                 <button class="btn btn-outline-secondary" type="button" id="button-addon2">🔍Search</button>
                             </div>
                             </form>
@@ -66,7 +69,7 @@
                             <span class="details" id="windspeed">2km/h</span>
                         </div>
                         <div class="col">
-                            <i class="fas fa-sun smallicon"></i>  
+                            <i class="fas fa-sun bigicon"></i>  
 
                             <h2 class="temperature" id="searchWeather">
                                 35°C
@@ -89,14 +92,14 @@
                                 <div class="day1">
                                     Mo.
                                 </div>
-                                <i class="fas fa-sun bigicon"></i>
+                                <i class="fas fa-sun smallicon"></i>
                                 <div class="day1-temp" id="temp">
                                     30°
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="day2">Tu.</div>
-                                <i class="fas fa-cloud-rain bigicon"></i>
+                                <i class="fas fa-cloud-rain smallicon"></i>
                                 <div class="day2-temp" id="temp">
                                     35°
                                 </div>
@@ -105,7 +108,7 @@
                                 <div class="day3">
                                     Wed.
                                 </div>
-                                <i class="fas fa-cloud-sun-rain bigicon"></i>
+                                <i class="fas fa-cloud-sun-rain smallicon"></i>
                                 <div class="day3-temp" id="temp">
                                     28°
                                 </div>
@@ -114,7 +117,7 @@
                                 <div class="day4">
                                     Thu.
                                 </div>
-                                <i class="fas fa-cloud-rain bigicon"></i>
+                                <i class="fas fa-cloud-rain smallicon"></i>
                                 <div class="day4-temp" id="temp">
                                     20°
                                 </div>
@@ -123,7 +126,7 @@
                                 <div class="day5">
                                     Fr.
                                 </div>
-                                <i class="fas fa-cloud-rain bigicon"></i>
+                                <i class="fas fa-cloud-rain smallicon"></i>
                                 <div class="day5-temp" id="temp">
                                     25°
                                 </div>
@@ -132,13 +135,13 @@
                                 <div class="day6">
                                     Fr.
                                 </div>
-                                <i class="fas fa-cloud-rain bigicon"></i>
+                                <i class="fas fa-cloud-rain smallicon"></i>
                                 <div class="day6-temp" id="temp">
                                     25°
                                 </div>
                             </div>
                             <div class="col-xl">
-                                <img src="media/undraw_skateboard_d6or.svg" class="peopleimg" alt="people" width="300px">
+                                <img src="media/summer_boy.svg" class="peopleimg" alt="people" width="250px">
                             </div>
                         </div>
                     </div>
@@ -146,7 +149,7 @@
                 <section class="footer">
                     <div class="row">
                         <div class="d-flex align-items-end">     
-                            <small>
+                            <div class="details">
                                 This project was coded  by 
                                 <a href="https://www.linkedin.com/in/paula-ortiz-portuguez/">Paula Ortiz</a>
                                 , designed using 
@@ -154,7 +157,7 @@
                                 and 
                                 <a href="https://github.com/papilla">open-sourced on GitHub</a> 
                                 and hosted on <a href="netlify.com">Netlify</a>. 
-                            </small>                           
+                            </div>                           
                         </div>
                     </div>  
                 </section>   
