@@ -1,4 +1,53 @@
+body {
+  background-color: #f6f5e8;
+}
+
 @font-face {
   font-family: "Bungee", cursive;
   src: url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+}
+h1 {
+  text-align: center;
+  color: black;
+  font-family: "Bungee";
+  font-size: 40pt;
+  margin: 3% auto 0;
+  line-height: 65pt;
+}
+h4 {
+  text-align: center;
+  color: black;
+  font-family: Geneva, sans-serif;
+  font-size: 13pt;
+  text-transform: uppercase;
+  letter-spacing: 10pt;
+}
+h2 {
+  color: black;
+  font-family: "Bungee";
+  font-size: 25pt;
+  margin: 0 auto 5%;
+  line-height: 65pt;
+}
+p {
+  color: black;
+  font-family: Geneva, sans-serif;
+  font-size: 12pt;
+  line-height: 20pt;
+  display: inline-flex;
+  max-width: 536px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.weather-app-wrapper {
+  max-width: 1700px;
+  margin: 30px;
+  padding: 100px 50px;
+  border: 1px solid #dadde1;
+  border-radius: 30px;
+  background-color: white;
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 30%);
 }
