@@ -11,8 +11,7 @@ h1 {
   color: black;
   font-family: "Bungee";
   font-size: 40pt;
-  margin: 3% auto 0;
-  line-height: 65pt;
+  margin: 3% auto 1%;
 }
 h4 {
   text-align: center;
@@ -26,7 +25,6 @@ h2 {
   color: black;
   font-family: "Bungee";
   font-size: 25pt;
-  margin: 0 auto 5%;
   line-height: 65pt;
 }
 p {
@@ -42,6 +40,11 @@ ul {
   padding: 0;
   margin: 0;
 }
+a {
+  color: #fe59a9;
+  font-family: Geneva, sans-serif;
+  font-weight: bold;
+}
 .weather-app-wrapper {
   max-width: 1700px;
   margin: 30px;
@@ -50,4 +53,28 @@ ul {
   border-radius: 30px;
   background-color: white;
   box-shadow: 3px 3px 10px rgb(0 0 0 / 30%);
+}
+.days {
+  font-size: 13pt;
+  font-family: Geneva, sans-serif;
+}
+.row {
+  --bs-gutter-x: 0;
+}
+#temp {
+  font-size: 13pt;
+  font-family: "Bungee";
+  color: #6c63ff;
+}
+#windspeed #precip {
+  color: #fe59a9;
+  font-family: Geneva, sans-serif;
+  font-weight: bold;
+}
+#today {
+  font-family: Geneva, sans-serif;
+  font-weight: bold;
+}
+.details {
+  font-size: smaller;
 }
