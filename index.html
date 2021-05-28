@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
@@ -59,20 +60,24 @@
                             <div class="daytime" id="today"> 
                             Sunday 12:00pm
                             </div>
-                            <span class="details">
-                                Precipitation: 
-                            </span>
-                            <span class="details" id="precip">40%</span>
-                            <span class="details">
-                                Wind: 
-                            </span>
-                            <span class="details" id="windspeed">2km/h</span>
+                            <ul class="details">
+                                <li>
+                                    Humidity: 
+                                    <span id="precip">40</span>%
+                                </li>
+                                <li>
+                                    <span >
+                                        Wind: 
+                                    </span>
+                                    <span id="windspeed">2</span>km/h
+                                </li>  
+                            </ul>
                         </div>
-                        <div class="col">
+                        <div class="col-9">
                             <i class="fas fa-sun bigicon"></i>  
 
-                            <h2 class="temperature" id="searchWeather">
-                                35°C
+                            <h2 class="temperature" id="todayTemp">
+                                35
                             </h2>
                             <a href="#" id="CELCIUS">C°</a> |
                             <a href="#" id="FARENHEIT">F°</a>
@@ -142,6 +147,9 @@
                             </div>
                             <div class="col-xl">
                                 <img src="media/summer_boy.svg" class="peopleimg" alt="people" width="250px">
+                                <div id="description">
+                                    clear sky
+                                </div>
                             </div>
                         </div>
                     </div>
