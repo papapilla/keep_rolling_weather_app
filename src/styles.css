@@ -25,7 +25,7 @@ h2 {
   color: black;
   font-family: "Bungee";
   font-size: 20pt;
-  line-height: 65pt;
+  line-height: 30pt;
 }
 p {
   color: black;
@@ -119,4 +119,7 @@ a {
 }
 .forecastrow {
   padding-bottom: 5%;
+}
+.cityCol {
+  padding-top: 5%;
 }
