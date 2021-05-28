@@ -1,3 +1,27 @@
+function formatDate(timestamp) {
+  //calculate the date and return something like: Friday 5:00pm
+  let date = new Date(timestamp);
+  let hour = date.getHours();
+  if (hour < 10) {
+    `0${hour}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hour}:${minutes}`;
+}
+
 function displaydata(response) {
   console.log(response);
   let temperatureElement = document.querySelector("#todayTemp");
@@ -10,6 +34,8 @@ function displaydata(response) {
   let windElement = document.querySelector("#windspeed");
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = response.data.wind.speed;
+  let dateElement = document.querySelector("#today");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 let cityname = "New York";
