@@ -46,6 +46,12 @@ function displaydata(response) {
   iconElement.setAttribute("alt", response.data.weather[0].descriptio);
 }
 
+function search(event) {
+  event.preventDefault(); //prevents the page to reload
+  let cityInputElement = document.querySelector("#searchInput");
+  console.log(cityInputElement);
+}
+
 let cityname = "New York";
 let APIkey = "e42384a736f7f13e78e748112d077d46";
 let APIurl = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${APIkey}&units=metric`;
@@ -53,3 +59,6 @@ let APIurl = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appi
 console.log(APIurl);
 
 axios.get(APIurl).then(displaydata);
+
+let form = document.querySelector("#search-Form");
+form.addEventListener("submit", search);

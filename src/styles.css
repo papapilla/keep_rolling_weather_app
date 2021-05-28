@@ -101,7 +101,7 @@ a {
   padding: 5px;
   border-radius: 10px;
   border: none;
-  min-width: 100px;
+  min-width: 100%;
   color: white;
 }
 .temperature {

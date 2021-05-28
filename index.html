@@ -26,155 +26,150 @@
   </head>
   <body>
     <div class="container">
-        <div class="weather-app-wrapper"> 
-                <header>
-                    <div class="mx-auto" style="width: 50px;">
-                        <img class="iconroller" src="https://img.icons8.com/ios/50/000000/roller-skates.png" alt="rollerskate icon" width="50px">
-                    </div>
-                    <div class="row justify-content-center">
-                        <h1>Ready to skate?</h1>
-                        <h4>How is the weather?</h4>
-                    </div>
-                </header>
+      <div class="weather-app-wrapper">
+        <header>
+          <div class="mx-auto" style="width: 50px">
+            <img
+              class="iconroller"
+              src="https://img.icons8.com/ios/50/000000/roller-skates.png"
+              alt="rollerskate icon"
+              width="50px"
+            />
+          </div>
+          <div class="row justify-content-center">
+            <h1>Ready to skate?</h1>
+            <h4>How is the weather?</h4>
+          </div>
+        </header>
 
-                <section class="form">
-                    <div class="row justify-content-center">
-                        <div class="col-fluid">
-                            <form id="searchForm">
-                            </br>
-                            <div class="input-group mb-3">
-                                <input id="searchInput" type="text" class="form-control search-input" placeholder="Hey there! Write a city" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">🔍Search</button>
-                            </div>
-                            </form>
-                        </div>
-                    </div>
-                </section>
-            
-                <section class="information">
-                    <div class="row">
-                        <div class="col cityCol">
-                            <h2 class="city" id="cityName">
-                                City
-                            </h2>      
-                            <div class="daytime" id="today"> 
-                            Sunday 12:00
-                            </div>
-                            <ul class="details">
-                                <li>
-                                    Humidity: 
-                                    <span id="precip">40</span>%
-                                </li>
-                                <li>
-                                    <span >
-                                        Wind: 
-                                    </span>
-                                    <span id="windspeed">2</span>km/h
-                                </li>  
-                            </ul>
-                        </div>
-                        <div class="col-9">
-                            <img
-                            src="http://openweathermap.org/img/wn/10d@2x.png";
-                            alt="clear";
-                            class="float-left";
-                            id="icon";
-                            />  
+        <section class="form">
+          <div class="row justify-content-center">
+            <div class="col-fluid">
+              <form id="search-Form">
+                <div class="input-group mb-3">
+                  <div class="col-8">
+                    <input
+                      id="searchInput"
+                      type="text"
+                      class="form-control search-input"
+                      placeholder="Hey there! Write a city"
+                    />
+                  </div>
+                  <div class="col-1"></div>
+                  <div class="col-3">
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      id="button-addon2"
+                    >
+                      🔍Search
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
 
-                            <h2 class="temperature" id="todayTemp">
-                                35
-                            </h2>
-                            <a href="#" id="CELCIUS">C°</a> |
-                            <a href="#" id="FARENHEIT">F°</a>
-                            
+        <section class="information">
+          <div class="row">
+            <div class="col cityCol">
+              <h2 class="city" id="cityName">City</h2>
+              <div class="daytime" id="today">Sunday 12:00</div>
+              <ul class="details">
+                <li>
+                  Humidity:
+                  <span id="precip">40</span>%
+                </li>
+                <li>
+                  <span> Wind: </span>
+                  <span id="windspeed">2</span>km/h
+                </li>
+              </ul>
+            </div>
+            <div class="col-9">
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                ;
+                alt="clear"
+                ;
+                class="float-left"
+                ;
+                id="icon"
+                ;
+              />
 
-                        </div>
-                        <!-- <div class="col-xl">             
+              <h2 class="temperature" id="todayTemp">35</h2>
+              <a href="#" id="CELCIUS">C°</a> |
+              <a href="#" id="FARENHEIT">F°</a>
+            </div>
+            <!-- <div class="col-xl">             
                             <img src="media/undraw_skateboard_d6or.svg" class="peopleimg" alt="people" width="300px">
                         </div> -->
-                    </div>
-                </section>
+          </div>
+        </section>
 
-                <section class="days">
-                    <div class="row forecastrow" >
-                        <div class="d-flex align-items-end">
-                            <div class="col">
-                                <div class="day1">
-                                    Mo.
-                                </div>
-                                <i class="fas fa-sun smallicon"></i>
-                                <div class="day1-temp" id="temp">
-                                    30°
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="day2">Tu.</div>
-                                <i class="fas fa-cloud-rain smallicon"></i>
-                                <div class="day2-temp" id="temp">
-                                    35°
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="day3">
-                                    Wed.
-                                </div>
-                                <i class="fas fa-cloud-sun-rain smallicon"></i>
-                                <div class="day3-temp" id="temp">
-                                    28°
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="day4">
-                                    Thu.
-                                </div>
-                                <i class="fas fa-cloud-rain smallicon"></i>
-                                <div class="day4-temp" id="temp">
-                                    20°
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="day5">
-                                    Fr.
-                                </div>
-                                <i class="fas fa-cloud-rain smallicon"></i>
-                                <div class="day5-temp" id="temp">
-                                    25°
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="day6">
-                                    Fr.
-                                </div>
-                                <i class="fas fa-cloud-rain smallicon"></i>
-                                <div class="day6-temp" id="temp">
-                                    25°
-                                </div>
-                            </div>
-                            <div class="col-xl">
-                                <img src="media/summer_boy.svg" class="peopleimg" alt="people" width="250px">
-                                <div id="description">
-                                    clear sky
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-   
+        <section class="days">
+          <div class="row forecastrow">
+            <div class="d-flex align-items-end">
+              <div class="col">
+                <div class="day1">Mo.</div>
+                <i class="fas fa-sun smallicon"></i>
+                <div class="day1-temp" id="temp">30°</div>
+              </div>
+              <div class="col">
+                <div class="day2">Tu.</div>
+                <i class="fas fa-cloud-rain smallicon"></i>
+                <div class="day2-temp" id="temp">35°</div>
+              </div>
+              <div class="col">
+                <div class="day3">Wed.</div>
+                <i class="fas fa-cloud-sun-rain smallicon"></i>
+                <div class="day3-temp" id="temp">28°</div>
+              </div>
+              <div class="col">
+                <div class="day4">Thu.</div>
+                <i class="fas fa-cloud-rain smallicon"></i>
+                <div class="day4-temp" id="temp">20°</div>
+              </div>
+              <div class="col">
+                <div class="day5">Fr.</div>
+                <i class="fas fa-cloud-rain smallicon"></i>
+                <div class="day5-temp" id="temp">25°</div>
+              </div>
+              <div class="col">
+                <div class="day6">Fr.</div>
+                <i class="fas fa-cloud-rain smallicon"></i>
+                <div class="day6-temp" id="temp">25°</div>
+              </div>
+              <div class="col-xl">
+                <img
+                  src="media/summer_boy.svg"
+                  class="peopleimg"
+                  alt="people"
+                  width="250px"
+                />
+                <div id="description">clear sky</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="footer">
+        <div class="d-flex align-items-end">
+          <div class="details">
+            This project was coded by
+            <a href="https://www.linkedin.com/in/paula-ortiz-portuguez/"
+              >Paula Ortiz</a
+            >
+            , designed using
+            <a href="https://www.behance.net/paorpo1992">Adobe XD</a>
+            and
+            <a href="https://github.com/papilla">open-sourced on GitHub</a>
+            and hosted on <a href="netlify.com">Netlify</a>.
+          </div>
         </div>
-                <section class="footer">
-                    <div class="d-flex align-items-end">     
-                        <div class="details">
-                                This project was coded  by 
-                            <a href="https://www.linkedin.com/in/paula-ortiz-portuguez/">Paula Ortiz</a>
-                                , designed using 
-                            <a href="https://www.behance.net/paorpo1992">Adobe XD</a> 
-                                and 
-                            <a href="https://github.com/papilla">open-sourced on GitHub</a> 
-                                and hosted on <a href="netlify.com">Netlify</a>. 
-                        </div>                           
-                        
-                    </div>  
-                </section>
+      </section>
     </div>
   </body>
 </html>
