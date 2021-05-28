@@ -36,6 +36,14 @@ function displaydata(response) {
   windElement.innerHTML = response.data.wind.speed;
   let dateElement = document.querySelector("#today");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  let iconElement = document.querySelector("#icon");
+  let icon = response.data.weather[0].icon;
+  console.log(icon);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].descriptio);
 }
 
 let cityname = "New York";

@@ -48,7 +48,7 @@ a {
 .weather-app-wrapper {
   max-width: 1700px;
   margin: 30px;
-  padding: 100px 50px 0 50px;
+  padding: 80px 50px 5% 50px;
   border: 1px solid #dadde1;
   border-radius: 30px;
   background-color: white;
@@ -84,8 +84,9 @@ a {
 }
 .footer {
   font-size: smaller;
-  padding: 6% 0;
+  padding: 0;
   text-align: center;
+  margin: 1% auto 5%;
 }
 .search-input {
   background-color: #7b6f9b2d;
@@ -115,4 +116,7 @@ a {
   color: #fe59a9;
   font-size: 10pt;
   font-family: "Bungee";
+}
+.forecastrow {
+  padding-bottom: 5%;
 }
