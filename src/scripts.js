@@ -1,3 +1,4 @@
+search("Paris"); //aqui tengo que ver como integrar la geolocalizacion
 function formatDate(timestamp) {
   //calculate the date and return something like: Friday 5:00pm
   let date = new Date(timestamp);
@@ -21,12 +22,15 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hour}:${minutes}`;
 }
+function defaultcity(location) {}
 
 function displaydata(response) {
   console.log(response);
   let temperatureElement = document.querySelector("#todayTemp");
   temperatureElement.innerHTML = Math.round(response.data.main.temp) + "°C";
   let cityElement = document.querySelector("#cityName");
+  celciusTemperature = response.data.main.temp;
+
   cityElement.innerHTML = response.data.name;
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -46,19 +50,35 @@ function displaydata(response) {
   iconElement.setAttribute("alt", response.data.weather[0].descriptio);
 }
 
-function search(event) {
+function search(city) {
+  let APIkey = "e42384a736f7f13e78e748112d077d46";
+  let APIurl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}&units=metric`;
+  axios.get(APIurl).then(displaydata);
+}
+function handlesubmit(event) {
   event.preventDefault(); //prevents the page to reload
   let cityInputElement = document.querySelector("#searchInput");
+  search(cityInputElement.value);
   console.log(cityInputElement);
 }
 
-let cityname = "New York";
-let APIkey = "e42384a736f7f13e78e748112d077d46";
-let APIurl = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${APIkey}&units=metric`;
-
-console.log(APIurl);
-
-axios.get(APIurl).then(displaydata);
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheiTemperature = (celciusTemperature * 9) / 5 + 32; //antes tenia 14 que era un dato random pero hay que cambiarlo para poder tener el valor de la busqueda, osea lo que se envia a la funcion
+  let temperatureElement = document.querySelector("#todayTemp");
+  temperatureElement.innerHTML = `${Math.round(fahrenheiTemperature)}°F`;
+}
+function displayCelciusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#todayTemp");
+  temperatureElement.innerHTML = `${Math.round(celciusTemperature)}°C`;
+}
+let celciusTemperature = null;
 
 let form = document.querySelector("#search-Form");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handlesubmit);
+
+let fahrenheitlink = document.querySelector("#FARENHEIT");
+fahrenheitlink.addEventListener("click", displayFahrenheitTemp);
+let celciusLink = document.querySelector("#CELCIUS");
+celciusLink.addEventListener("click", displayCelciusTemp);
