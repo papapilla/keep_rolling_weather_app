@@ -23,23 +23,40 @@ function formatDate(timestamp) {
   return `${day} ${hour}:${minutes}`;
 }
 
-function displayForecast(response) {
-  console.log(response.data.daily);
-  let forecastElement = document.querySelector("#forecastWeather");
+// this time this will not change the current but the forecast days
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecastWeather");
   let forecastHMTL = ` <div class="row d-flex align-items-end">`;
 
-  let days = ["Sun", "Mon", "Tue"];
-  days.forEach(function (day) {
-    forecastHMTL =
-      forecastHMTL +
-      `              
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHMTL =
+        forecastHMTL +
+        `              
                 <div class="col">
-                  <div class="day1">${day}</div>
-                  <div><i class="fas fa-sun smallicon"></i></div>
-                  <span class="day1-temp" id="temp">30°</span>/
-                  <span class="day1-temp" id="tempMax">28°</span>
+                  <div class="day1">${formatDay(forecastDay.dt)}</div>
+                  <div><img src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png"
+                  alt=""
+                  width="50"></img></div>
+                  <span class="day1-temp" id="temp">${Math.round(
+                    forecastDay.temp.max
+                  )}°</span>/
+                  <span class="day1-temp" id="tempMax">${Math.round(
+                    forecastDay.temp.min
+                  )}°</span>
                 </div>`;
+    }
   });
   forecastHMTL += `</div>`;
   forecastElement.innerHTML = forecastHMTL;
