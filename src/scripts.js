@@ -23,29 +23,36 @@ function formatDate(timestamp) {
   return `${day} ${hour}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecastWeather");
 
-  let forecastHMTL = ` <div class="row">`;
+  let forecastHMTL = ` <div class="row d-flex align-items-end">`;
 
   let days = ["Sun", "Mon", "Tue"];
   days.forEach(function (day) {
     forecastHMTL =
       forecastHMTL +
       `              
-                <div class="d-flex align-items-end"></div>
-                <div class="col-2">
+                <div class="col">
                   <div class="day1">${day}</div>
                   <div><i class="fas fa-sun smallicon"></i></div>
                   <span class="day1-temp" id="temp">30°</span>/
                   <span class="day1-temp" id="tempMax">28°</span>
                 </div>`;
   });
-  forecastHMTL = `</div>`;
+  forecastHMTL += `</div>`;
   forecastElement.innerHTML = forecastHMTL;
-  console.log(forecastHMTL);
+  //console.log(forecastHMTL);
 }
-
+function getLocation(response) {
+  let coordinates = response.coord;
+  let time = response.dt;
+  let APIkey = "e42384a736f7f13e78e748112d077d46";
+  let APIurl = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${coordinates.lat}&lon=${coordinates.lon}&dt=${time}&appid=${APIkey}&units=metric`;
+  console.log(APIurl);
+  axios.get(APIurl).then(displayForecast);
+}
 function displaydata(response) {
   console.log(response);
   let temperatureElement = document.querySelector("#todayTemp");
@@ -72,6 +79,7 @@ function displaydata(response) {
   iconElement.setAttribute("alt", response.data.weather[0].descriptio);
 
   //displayForecast();
+  getLocation(response.data);
 }
 
 function search(city) {
@@ -107,5 +115,3 @@ let fahrenheitlink = document.querySelector("#FARENHEIT");
 fahrenheitlink.addEventListener("click", displayFahrenheitTemp);
 let celciusLink = document.querySelector("#CELCIUS");
 celciusLink.addEventListener("click", displayCelciusTemp);
-
-displayForecast();
