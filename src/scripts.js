@@ -22,7 +22,29 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hour}:${minutes}`;
 }
-function defaultcity(location) {}
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecastWeather");
+
+  let forecastHMTL = ` <div class="row">`;
+
+  let days = ["Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHMTL =
+      forecastHMTL +
+      `              
+                <div class="d-flex align-items-end"></div>
+                <div class="col-2">
+                  <div class="day1">${day}</div>
+                  <div><i class="fas fa-sun smallicon"></i></div>
+                  <span class="day1-temp" id="temp">30°</span>/
+                  <span class="day1-temp" id="tempMax">28°</span>
+                </div>`;
+  });
+  forecastHMTL = `</div>`;
+  forecastElement.innerHTML = forecastHMTL;
+  console.log(forecastHMTL);
+}
 
 function displaydata(response) {
   console.log(response);
@@ -48,6 +70,8 @@ function displaydata(response) {
     `http://openweathermap.org/img/wn/${icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].descriptio);
+
+  //displayForecast();
 }
 
 function search(city) {
@@ -83,3 +107,5 @@ let fahrenheitlink = document.querySelector("#FARENHEIT");
 fahrenheitlink.addEventListener("click", displayFahrenheitTemp);
 let celciusLink = document.querySelector("#CELCIUS");
 celciusLink.addEventListener("click", displayCelciusTemp);
+
+displayForecast();
