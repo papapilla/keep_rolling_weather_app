@@ -122,16 +122,16 @@ a {
   font-size: 10pt;
   font-family: "Bungee";
 }
-.forecastrow {
-  padding-bottom: 5%;
-}
-.cityCol {
-  padding-top: 5%;
-}
+
 #CELCIUS #FARENHEIT .active {
   text-decoration: none;
   color: black;
 }
+
+.informationRow {
+  margin: 0 0 8%;
+}
+
 .col {
-  text-align: center;
+  padding: 2% 0;
 }
