@@ -24,7 +24,7 @@ function formatDate(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecastWeather");
 
   let forecastHMTL = ` <div class="row d-flex align-items-end">`;
@@ -49,7 +49,7 @@ function getLocation(response) {
   let coordinates = response.coord;
   let time = response.dt;
   let APIkey = "e42384a736f7f13e78e748112d077d46";
-  let APIurl = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${coordinates.lat}&lon=${coordinates.lon}&dt=${time}&appid=${APIkey}&units=metric`;
+  let APIurl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${APIkey}&units=metric`;
   console.log(APIurl);
   axios.get(APIurl).then(displayForecast);
 }
