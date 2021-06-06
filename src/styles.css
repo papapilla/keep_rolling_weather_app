@@ -69,9 +69,14 @@ a {
   --bs-gutter-x: 0;
 }
 #temp {
-  font-size: 13pt;
+  font-size: 10pt;
   font-family: "Bungee";
   color: #583ea1;
+}
+#tempMax {
+  font-size: 10pt;
+  font-family: "Bungee";
+  color: #8270b6;
 }
 #windspeed #precip {
   color: #fe59a9;
@@ -122,4 +127,11 @@ a {
 }
 .cityCol {
   padding-top: 5%;
+}
+#CELCIUS #FARENHEIT .active {
+  text-decoration: none;
+  color: black;
+}
+.col {
+  text-align: center;
 }

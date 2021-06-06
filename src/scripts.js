@@ -64,6 +64,7 @@ function handlesubmit(event) {
 
 function displayFahrenheitTemp(event) {
   event.preventDefault();
+  celciusLink.classList.remove("active");
   let fahrenheiTemperature = (celciusTemperature * 9) / 5 + 32; //antes tenia 14 que era un dato random pero hay que cambiarlo para poder tener el valor de la busqueda, osea lo que se envia a la funcion
   let temperatureElement = document.querySelector("#todayTemp");
   temperatureElement.innerHTML = `${Math.round(fahrenheiTemperature)}°F`;
