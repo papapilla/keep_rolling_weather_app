@@ -1,24 +1,25 @@
-let currentCity = getCurrentPosition();
-search(currentCity); //aqui tengo que ver como integrar la geolocalizacion
+search("Paris");
+// let currentCity = getCurrentPosition;
+// search(currentCity); //aqui tengo que ver como integrar la geolocalizacion
 
-function tellCity(response) {
-  console.log(response);
-  let currentCity = response.data.main.name;
-  return currentCity;
-}
-function getGeolocation(position) {
-  console.log(position);
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let APIkey = "e42384a736f7f13e78e748112d077d46";
-  let APIurl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}`;
-  console.log(APIurl);
-  axios.get(APIurl).then(tellCity);
-}
+// function tellCity(response) {
+//   console.log(response);
+//   let currentCity = response.data.main.name;
+//   return currentCity;
+// }
+// function getGeolocation(position) {
+//   console.log(position);
+//   let lat = position.coords.latitude;
+//   let lon = position.coords.longitude;
+//   let APIkey = "e42384a736f7f13e78e748112d077d46";
+//   let APIurl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}`;
+//   console.log(APIurl);
+//   axios.get(APIurl).then(tellCity);
+// }
 
-function getCurrentPosition() {
-  navigator.geolocation.getCurrentPosition(getGeolocation);
-}
+// function getCurrentPosition() {
+//   navigator.geolocation.getCurrentPosition(getGeolocation);
+// }
 
 function formatDate(timestamp) {
   //calculate the date and return something like: Friday 5:00pm
