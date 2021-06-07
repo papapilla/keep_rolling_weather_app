@@ -35,7 +35,7 @@ function formatDay(timestamp) {
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecastWeather");
-  let forecastHMTL = ` <div class="row d-flex align-items-end">`;
+  let forecastHMTL = ` <div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
@@ -111,24 +111,7 @@ function handlesubmit(event) {
   console.log(cityInputElement);
 }
 
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  celciusLink.classList.remove("active");
-  let fahrenheiTemperature = (celciusTemperature * 9) / 5 + 32; //antes tenia 14 que era un dato random pero hay que cambiarlo para poder tener el valor de la busqueda, osea lo que se envia a la funcion
-  let temperatureElement = document.querySelector("#todayTemp");
-  temperatureElement.innerHTML = `${Math.round(fahrenheiTemperature)}°F`;
-}
-function displayCelciusTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#todayTemp");
-  temperatureElement.innerHTML = `${Math.round(celciusTemperature)}°C`;
-}
 let celciusTemperature = null;
 
 let form = document.querySelector("#search-Form");
 form.addEventListener("submit", handlesubmit);
-
-let fahrenheitlink = document.querySelector("#FARENHEIT");
-fahrenheitlink.addEventListener("click", displayFahrenheitTemp);
-let celciusLink = document.querySelector("#CELCIUS");
-celciusLink.addEventListener("click", displayCelciusTemp);

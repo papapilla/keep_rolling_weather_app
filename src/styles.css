@@ -129,9 +129,14 @@ a {
 }
 
 .informationRow {
-  margin: 0 0 8%;
+  padding: 0 0 8%;
+  margin: 0 5%;
 }
 
 .col {
   padding: 2% 0;
+  text-align: center;
+}
+.Imagen {
+  margin-top: 3%;
 }
